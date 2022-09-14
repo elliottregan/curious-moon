@@ -58,3 +58,21 @@ You can use the Docker Desktop GUI, and manually view and stop any running conta
 `docker container ls` will list out all running containers along with some info about them. Take note of the first column, which it displays the ID of the container.
 
 `docker container kill <container-id>` will stop the container with the matching ID. You don't need to type out the whole ID; the first few characters are all it needs.
+
+## Adding Source Data
+Create a directory called `source_data`, and drop the unzipped Curious Moon data in there. This will now be available in your container
+
+## Finding your data
+When logged in to the VM, type
+`su postgres` to log in as the `postgres` user (rather than `root`).
+
+Then type:
+
+`cd ~/`
+
+This will navigate to your home directory (`~/` is a shortcut to the current user's home directory). The `ls` command should then list two directories: `data` and `source_data`.
+
+### Directories
+`data` is where the PostgresSQL server stores all of its internal data. Don't touch this stuff.
+
+`source_data` this should show all the files you've dropped into the `source_data` directory on your computer.
